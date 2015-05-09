@@ -6016,10 +6016,6 @@ Transform:
   - {fileID: 1624025213}
   m_Father: {fileID: 2007911029}
   m_RootOrder: 2
---- !u!4 &1120235715 stripped
-Transform:
-  m_PrefabParentObject: {fileID: 429342, guid: 0bf8234769049b4418ad464cf6413037, type: 2}
-  m_PrefabInternal: {fileID: 1381126856}
 --- !u!1 &1152465843
 GameObject:
   m_ObjectHideFlags: 0
@@ -6918,31 +6914,6 @@ BoxCollider2D:
   m_PrefabParentObject: {fileID: 6193298, guid: 0bf8234769049b4418ad464cf6413037,
     type: 2}
   m_PrefabInternal: {fileID: 1381126856}
---- !u!114 &1296259008
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1296259000}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 506f3fbf30fa61143997f6f0e11e592d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 8
-  runSpeed: 14
-  groundDamping: 20
-  inAirDamping: 5
-  jumpVelocity: 13.5
-  jumpFraction: .5
-  jumpTime: .5
-  groundCheckTransform: {fileID: 1120235715}
-  groundCheckRadius: .100000001
-  groundCheckLayerMask:
-    serializedVersion: 2
-    m_Bits: 34304
-  canMove: 1
-  canJump: 1
 --- !u!1 &1321883562
 GameObject:
   m_ObjectHideFlags: 0
@@ -7355,6 +7326,10 @@ Prefab:
     - target: {fileID: 5029342, guid: 0bf8234769049b4418ad464cf6413037, type: 2}
       propertyPath: m_IsKinematic
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11403270, guid: 0bf8234769049b4418ad464cf6413037, type: 2}
+      propertyPath: canJump
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 11445508, guid: 0bf8234769049b4418ad464cf6413037, type: 2}

@@ -146,10 +146,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 8
-  runSpeed: 14
+  runSpeed: 10
   groundDamping: 20
   inAirDamping: 5
-  jumpVelocity: 13.5
+  jumpVelocity: 12
   jumpFraction: .5
   jumpTime: .5
   groundCheckTransform: {fileID: 429342}
