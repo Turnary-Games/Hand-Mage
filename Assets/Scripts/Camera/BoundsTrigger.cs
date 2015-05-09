@@ -49,7 +49,7 @@ public class BoundsTrigger : MonoBehaviour {
 	}
 
 	void OnDrawGizmosSelected() {
-		if (zoom) {
+		if (zoom && bounds != null) {
 			// Draw camera size representation
 			Camera cam = Camera.main;
 			Gizmos.color = Color.cyan;
@@ -57,7 +57,7 @@ public class BoundsTrigger : MonoBehaviour {
 			Gizmos.DrawWireCube (bounds.bounds.center, new Vector3 (cam.aspect, 1) * zoomAmount * 2);
 		}
 
-		if (!triggerOnStart) {
+		if (!triggerOnStart && bounds != null) {
 			// Draw bounds
 			Gizmos.color = Color.green;
 			Gizmos.DrawWireCube (bounds.bounds.center, bounds.bounds.size);
