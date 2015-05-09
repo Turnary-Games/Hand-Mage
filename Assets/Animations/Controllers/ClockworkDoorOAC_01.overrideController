@@ -1,0 +1,14 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!221 &22100000
+AnimatorOverrideController:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: ClockworkDoorOAC_01
+  m_Controller: {fileID: 9100000, guid: 2a2f424a3a8759a4aa1e4956d649cdd2, type: 2}
+  m_Clips:
+  - m_OriginalClip: {fileID: 7400000, guid: 698f0c7c52d91484db6f42c404f0d95e, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: dbc1695206eff0648b39cef461c698aa, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 9af1c007bc80dc04f999da227fac5d19, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 08992532dd907d74c89d89aafef748f1, type: 2}

@@ -1,0 +1,65 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - Hand
+  - Grabable
+  - GUI Heart
+  - CameraBounds
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - 
+  - Water
+  - UI
+  - 
+  - 
+  - Player
+  - Terrain
+  - Objects
+  - Grabbed
+  - 
+  - Ignore Player
+  - Dead player
+  - Ignore terrain
+  - Hand collider
+  - Hand trigger
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Default
+    uniqueID: 0
+    locked: 0
+  - name: Terrain
+    uniqueID: 1697482579
+    locked: 0
+  - name: Objects
+    uniqueID: 107773529
+    locked: 0
+  - name: Enemies
+    uniqueID: 1917571015
+    locked: 0
+  - name: Effects
+    uniqueID: 1455258159
+    locked: 0
+  - name: Player
+    uniqueID: 3273455279
+    locked: 0
+  - name: Terrain overlay
+    uniqueID: 4079418665
+    locked: 0
