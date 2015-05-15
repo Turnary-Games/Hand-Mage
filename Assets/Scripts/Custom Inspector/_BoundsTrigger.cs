@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿#if UNITY_EDITOR
+
+using UnityEngine;
 using System.Collections;
 using UnityEditor;
 
@@ -54,3 +56,5 @@ public class _BoundsTrigger : Editor {
 	#endregion
 
 }
+
+#endif
