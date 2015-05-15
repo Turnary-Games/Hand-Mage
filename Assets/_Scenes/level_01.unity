@@ -2213,7 +2213,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a93c89f2606581340818f647d923ef20, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetRoom: {fileID: 102900000, guid: 3a07ca8e9a5da524e9c8feb8fb19c5d6, type: 3}
+  targetRoom: level_02
   loadingText: {fileID: 37613210}
 --- !u!212 &915551535
 SpriteRenderer:

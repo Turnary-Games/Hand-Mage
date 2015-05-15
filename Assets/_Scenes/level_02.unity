@@ -9782,9 +9782,8 @@ Prefab:
       objectReference: {fileID: 1091232674}
     - target: {fileID: 11475556, guid: 88275c41a0f5ad94792f50aa5e16f07e, type: 2}
       propertyPath: targetRoom
-      value: 
-      objectReference: {fileID: 102900000, guid: 7dd7ac5f910da9e4f9550cac5dfd7a29,
-        type: 3}
+      value: main_menu
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 88275c41a0f5ad94792f50aa5e16f07e, type: 2}
   m_IsPrefabParent: 0

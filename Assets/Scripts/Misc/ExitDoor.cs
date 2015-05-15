@@ -4,7 +4,7 @@ using UnityEngine.UI;
 
 public class ExitDoor : MonoBehaviour {
 
-	public Object targetRoom;
+	public string targetRoom;
 	public Text loadingText;
 	private bool playerInside;
 
@@ -33,7 +33,7 @@ public class ExitDoor : MonoBehaviour {
 	IEnumerator LoadLevel() {
 		loadingText.text = "Loading level...";
 
-		AsyncOperation async = Application.LoadLevelAsync (targetRoom.name);
+		AsyncOperation async = Application.LoadLevelAsync (targetRoom);
 		yield return async;
 		Debug.Log("Loading complete");
 		Debug.Log (async);
