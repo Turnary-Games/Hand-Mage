@@ -7669,7 +7669,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_Offset: {x: 3.43460083, y: 2.59998989}
   serializedVersion: 2
-  m_Size: {x: 35.3072701, y: 22.277195}
+  m_Size: {x: 35.7099991, y: 22.277195}
 --- !u!1 &1277929901
 GameObject:
   m_ObjectHideFlags: 0
@@ -12079,6 +12079,7 @@ MonoBehaviour:
   hand: {fileID: 1433414399}
   tmpBounds: {fileID: 0}
   cameraSpeed: 12
+  transactionSpeed: 3.5
   zoomSpeed: 2
   handFocusAmount: .300000012
 --- !u!1 &1930438105

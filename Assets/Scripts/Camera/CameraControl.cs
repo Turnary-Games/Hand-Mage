@@ -7,6 +7,7 @@ public class CameraControl : MonoBehaviour {
 	public GameObject hand;
 	public BoxCollider2D tmpBounds;
 	public float cameraSpeed;
+	public float transactionSpeed;
 	public float zoomSpeed = 1.0f;
 	public float handFocusAmount;
 
@@ -42,7 +43,7 @@ public class CameraControl : MonoBehaviour {
 		pos.z = zPosition;
 
 		// Lerp
-		transform.position = Vector3.Lerp (transform.position, pos, Time.deltaTime * cameraSpeed);
+		transform.position = Vector3.Lerp (transform.position, pos, Time.deltaTime * (IsInsideBounds() ? cameraSpeed : transactionSpeed));
 
 	}
 
@@ -80,6 +81,48 @@ public class CameraControl : MonoBehaviour {
 		
 		pos = center;
 	}
+
+	#region Is the camera currently inside the target boundary
+	bool IsInsideBounds() {
+		// The camera viewport bounds
+		Camera cam = GetComponent<Camera> ();
+		Vector3 camSize = new Vector3 (cam.orthographicSize * cam.aspect * 2, cam.orthographicSize * 2);
+		Bounds viewport = new Bounds (transform.position, camSize);
+
+		bool value = IsInsideBoundsX (viewport) && IsInsideBoundsY (viewport);
+		print (value);
+
+		return value;
+	}
+
+	bool IsInsideBoundsX(Bounds view) {
+		// Too small
+		if (bounds.size.x < view.size.x)
+			return true;
+
+		if (view.min.x < bounds.min.x)
+			return false;
+
+		if (view.max.x > bounds.max.x)
+			return false;
+
+		return true;
+	}
+
+	bool IsInsideBoundsY(Bounds view) {
+		// Too small
+		if (bounds.size.y < view.size.y)
+			return true;
+		
+		if (view.min.y < bounds.min.y)
+			return false;
+		
+		if (view.max.y > bounds.max.y)
+			return false;
+		
+		return true;
+	}
+	#endregion
 
 	public void GoInsideTempBounds() {
 		if (tmpBounds != null) {

@@ -4585,7 +4585,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1922930252}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 9.19999981, y: 6.0999999, z: -10}
+  m_LocalPosition: {x: 12.6999998, y: 5.19999981, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -4603,7 +4603,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 1296259000}
   hand: {fileID: 294267423}
+  tmpBounds: {fileID: 0}
   cameraSpeed: 12
+  transactionSpeed: 3.5
   zoomSpeed: 2
   handFocusAmount: .300000012
 --- !u!4 &1925543263 stripped

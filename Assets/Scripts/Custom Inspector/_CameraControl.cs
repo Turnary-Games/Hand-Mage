@@ -17,6 +17,7 @@ public class _CameraControl : Editor {
 		EditorGUILayout.Space ();
 
 		script.cameraSpeed = EditorGUILayout.FloatField ("Camera speed", script.cameraSpeed);
+		script.transactionSpeed = EditorGUILayout.FloatField ("Transaction speed", script.transactionSpeed);
 		script.zoomSpeed = EditorGUILayout.FloatField ("Zoom speed", script.zoomSpeed);
 
 		EditorGUILayout.Space ();
