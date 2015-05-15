@@ -9783,7 +9783,7 @@ Prefab:
     - target: {fileID: 11475556, guid: 88275c41a0f5ad94792f50aa5e16f07e, type: 2}
       propertyPath: targetRoom
       value: 
-      objectReference: {fileID: 102900000, guid: b39a529476b772c4594f07dc0d8ac102,
+      objectReference: {fileID: 102900000, guid: 7dd7ac5f910da9e4f9550cac5dfd7a29,
         type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 88275c41a0f5ad94792f50aa5e16f07e, type: 2}
