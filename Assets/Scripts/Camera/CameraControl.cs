@@ -5,9 +5,10 @@ public class CameraControl : MonoBehaviour {
 
 	public GameObject player;
 	public GameObject hand;
+	public BoxCollider2D tmpBounds;
 	public float cameraSpeed;
 	public float zoomSpeed = 1.0f;
-	[Range(0,1)] public float handFocusAmount;
+	public float handFocusAmount;
 
 	private bool zoom;
 	private float zoomAmount;
@@ -80,6 +81,19 @@ public class CameraControl : MonoBehaviour {
 		pos = center;
 	}
 
+	public void GoInsideTempBounds() {
+		if (tmpBounds != null) {
+			Vector3 pos = transform.position;
+			Bounds oBounds = bounds;
+			bounds = tmpBounds.bounds;
+
+			InsideBounds (ref pos);
+
+			bounds = oBounds;
+			transform.position = pos;
+		}
+	}
+
 	#endregion
 
 	void OnDrawGizmos() {
@@ -97,6 +111,14 @@ public class CameraControl : MonoBehaviour {
 		Gizmos.color = Color.green;
 		Gizmos.DrawWireCube (viewport.center, viewport.size);
 		Gizmos.DrawRay (viewport.min, viewport.size);
+	}
+
+	void OnDrawGizmosSelected() {
+		if (tmpBounds != null) {
+			// Draw temporary boundary
+			Gizmos.color = Color.red;
+			Gizmos.DrawWireCube (tmpBounds.bounds.center, tmpBounds.bounds.size);
+		}
 	}
 
 	#region Public methods
