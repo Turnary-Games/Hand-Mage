@@ -89,10 +89,7 @@ public class CameraControl : MonoBehaviour {
 		Vector3 camSize = new Vector3 (cam.orthographicSize * cam.aspect * 2, cam.orthographicSize * 2);
 		Bounds viewport = new Bounds (transform.position, camSize);
 
-		bool value = IsInsideBoundsX (viewport) && IsInsideBoundsY (viewport);
-		print (value);
-
-		return value;
+		return IsInsideBoundsX (viewport) && IsInsideBoundsY (viewport);
 	}
 
 	bool IsInsideBoundsX(Bounds view) {
