@@ -170,6 +170,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ddaa75d5d03b6046a14078d4f2e2fd6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  startHeath: 3
   invTime: .5
   knockback: 7
   colliders:
