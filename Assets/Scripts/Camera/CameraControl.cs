@@ -11,11 +11,11 @@ public class CameraControl : MonoBehaviour {
 	public float zoomSpeed = 1.0f;
 	public float handFocusAmount;
 
-	private bool zoom;
-	private float zoomAmount;
+	public bool zoom;
+	public float zoomAmount;
 	
-	private bool useBounds = true;
-	private Bounds bounds = new Bounds (Vector3.zero, Vector3.one * Mathf.Infinity);
+	public bool useBounds = true;
+	public Bounds bounds = new Bounds (Vector3.zero, Vector3.one * Mathf.Infinity);
 	private float zPosition;
 	private float startZoom;
 
