@@ -15,8 +15,8 @@ public class HandController : MonoBehaviour {
 
 	private Animator anim;
 	private PlayerHealth health;
-	private Transform target;
-	private Vector3 lastPosition;
+	[HideInInspector] public Transform target;
+	[HideInInspector] public Vector3 lastPosition;
 
 	public enum States { idle, waiting, moving, grabbed }
 	private States state = States.idle;
@@ -174,6 +174,10 @@ public class HandController : MonoBehaviour {
 
 	public States GetState() {
 		return state;
+	}
+	
+	public void SetState(States newState) {
+		state = newState;
 	}
 	
 	public bool IsGrabbed() { return state == States.grabbed; }

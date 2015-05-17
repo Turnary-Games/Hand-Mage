@@ -4,6 +4,7 @@ using System.Collections;
 public class PlayerHealth : MonoBehaviour {
 
 	// Public variables
+	public int startHeath;
 	public float invTime;
 	public float knockback;
 
@@ -14,7 +15,7 @@ public class PlayerHealth : MonoBehaviour {
 	private Animator anim;
 	private PlayerMovement move;
 
-	private int health = 1;
+	private int health;
 	private bool damaged = false;
 	private float damagedTimer;
 
@@ -22,6 +23,7 @@ public class PlayerHealth : MonoBehaviour {
 	void Start() {
 		anim = GetComponent<Animator> ();
 		move = GetComponent<PlayerMovement> ();
+		health = startHeath;
 	}
 
 	void Update() {
@@ -43,17 +45,22 @@ public class PlayerHealth : MonoBehaviour {
 
 	// Health methods
 	public void SetHealth(int num) {
-		if (health <= 0)
+		if (num - health == 0)
 			return;
 
-		health = Mathf.Max(num, 0);
+		int newHealth = Mathf.Max(num, 0);
+		if (newHealth == health)
+			return;
+
+		health = newHealth;
 
 		UpdateHealth ();
 
-		if (health == 0) {
-			// Just died
-			Die ();
-		}
+		anim.SetBool ("Dead", health == 0);
+		if (health == 0)
+			gameObject.layer = LayerMask.NameToLayer ("Dead player");
+		else
+			gameObject.layer = LayerMask.NameToLayer ("Player");
 	}
 
 	public void AddHealth(int deltaHealth) {
@@ -62,6 +69,10 @@ public class PlayerHealth : MonoBehaviour {
 
 	public int GetHealth() {
 		return health;
+	}
+
+	public static PlayerHealth GetInstance() {
+		return FindObjectOfType<PlayerHealth> ();
 	}
 
 	public void UpdateHealth() {
@@ -102,7 +113,7 @@ public class PlayerHealth : MonoBehaviour {
 	}
 
 	public void Damage(int dmg, Vector3 source) {
-		if (health <= 0)
+		if (health == 0)
 			return;
 
 		if (damaged)
@@ -136,18 +147,13 @@ public class PlayerHealth : MonoBehaviour {
 		return damagedTimer / invTime;
 	}
 
-	// Death methods
-	public void Die() {
-		anim.SetTrigger("Death");
-
-		gameObject.layer = LayerMask.NameToLayer ("Dead player");
-	}
 
 	public bool IsDead() {
 		return health <= 0;
 	}
 
 	void Restart() {
-		GameController.RestartLevel ();
+		CheckpointController.LoadCheckpoint ();
+		//GameController.RestartLevel ();
 	}
 }
